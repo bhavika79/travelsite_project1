@@ -64,7 +64,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a href="index.php" class="navbar-brand">Travel</a>
+        <a href="home.php" class="navbar-brand">Travel</a>
       </div>
       <div class="nav navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
