@@ -27,3 +27,24 @@ jobs:
       with:
         push: true
         tags: ghcr.io/${{ github.actor }}/travel-site:latest
+        
+    - uses: azure/setup-kubectl@v2.0
+      with:
+        version: '1.21.3'
+        id: install
+        
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-1
+        
+    - name: Update kube config
+      run: aws eks update-kubeconfig --name k8s-assignment
+      
+    - name: Run k8s files
+      run: |
+        kubectl apply -f docker-secret.yaml
+        kubectl apply -f deployment.yaml
+
