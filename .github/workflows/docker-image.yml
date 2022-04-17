@@ -28,6 +28,7 @@ jobs:
         aws configure set aws_session_token ${{ secrets.AWS_SESSION_TOKEN }}
         aws configure set region us-east-1
         cat ~/.aws/credentials
+        aws sts get-caller-identity
     
     #- name: Configure AWS credentials
     #  uses: aws-actions/configure-aws-credentials@v1
