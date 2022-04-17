@@ -21,6 +21,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
+    - name: remove .aws directory
+      run: rm-rf ~/.aws
+    
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
