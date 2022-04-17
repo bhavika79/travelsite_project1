@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Travel Website Pipeline
 
 on:
   push:
@@ -46,7 +46,7 @@ jobs:
         aws-region: us-east-1
         
     - name: update aws token
-      run: echo aws_session_token=${{ AWS_SESSION_TOKEN }} | cat >> ~/.aws/credentials
+      run: echo aws_session_token=${{ secrets.AWS_SESSION_TOKEN }} | cat >> ~/.aws/credentials
         
     - name: Update kube config
       run: aws eks update-kubeconfig --name k8s-assignment
