@@ -63,9 +63,9 @@ jobs:
         
     - name: Update kube config
       run: aws eks update-kubeconfig --name k8s-assignment
-      
-    - name: Run k8s-secret file
-      run:  kubectl apply -f docker-secret.yaml
         
     - name: Run k8s-deployment file
       run: kubectl apply -f deployment.yaml
+      
+    - name: Run k8s-secret file
+      run:  kubectl apply -f service.yaml
