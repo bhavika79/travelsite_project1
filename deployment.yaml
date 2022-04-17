@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: travel-deployment
+  namespace: practice-space
+  labels:
+    app: travel
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: travel
+  template:
+    metadata:
+      labels:
+        app: travel
+    spec:
+      containers:
+      - name: travel
+        image: ghcr.io/${{ github.actor }}/travel-site:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
