@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: travel
-        image: ghcr.io/${{ github.actor }}/travel-site:latest
+        image: ghcr.io/bhavika79/travel-site:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
