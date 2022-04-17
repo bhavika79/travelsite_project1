@@ -69,4 +69,3 @@ jobs:
         
     - name: Run k8s-deployment file
       run: kubectl apply -f deployment.yaml
-
