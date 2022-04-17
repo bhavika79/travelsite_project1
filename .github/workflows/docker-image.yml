@@ -67,5 +67,5 @@ jobs:
     - name: Run k8s-deployment file
       run: kubectl apply -f deployment.yaml
       
-    - name: Run k8s-secret file
+    - name: Run k8s-service file
       run:  kubectl apply -f service.yaml
