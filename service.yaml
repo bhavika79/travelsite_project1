@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: travel-service
+  namespace: practice-space
 spec:
   selector:
     app: travel
