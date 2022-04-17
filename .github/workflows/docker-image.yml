@@ -27,12 +27,6 @@ jobs:
         aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }} 
         aws configure set aws_session_token ${{ secrets.AWS_SESSION_TOKEN }}
         aws configure set region us-east-1
-        cat ~/.aws/credentials
-        
-    - name: test
-      run: |
-        aws --version
-        aws configure list
     
     #- name: Configure AWS credentials
     #  uses: aws-actions/configure-aws-credentials@v1
@@ -43,10 +37,6 @@ jobs:
         
     #- name: update aws token
     #  run: echo aws_session_token=${{ secrets.AWS_SESSION_TOKEN }} | cat >> ~/.aws/credentials
-      
-    - uses: azure/setup-kubectl@v2.0
-      with:
-        version: 'v1.21.3'
         
     - name: Login to DockerHub
       uses: docker/login-action@v1 
@@ -60,6 +50,10 @@ jobs:
       with:
         push: true
         tags: ghcr.io/${{ github.actor }}/travel-site:latest
+    
+    - uses: azure/setup-kubectl@v2.0
+      with:
+        version: 'v1.21.3'
         
     - name: Update kube config
       run: aws eks update-kubeconfig --name k8s-assignment
