@@ -63,3 +63,6 @@ jobs:
       
     - name: Run k8s-service file
       run:  kubectl apply -f service.yaml
+      
+    - name: Updating the image
+      run: kubectl set image deployments travel-deployment travel=ghcr.io/bhavika79/travel-site:latest
