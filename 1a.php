@@ -95,7 +95,7 @@
         <div class="col-md-6">
           <h4>Information</h4>
           
-          <a href="index.php">Contact Us</a>
+          <a href="home.php">Contact Us</a>
         </div>
         
         <div class="col-md-6">
