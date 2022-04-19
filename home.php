@@ -88,14 +88,14 @@
           </div>
        </a>
     </div>
-    <div class="items">
+<!--     <div class="items">
        <a href="1f.php">
           <img src="images/ananthagiri.jpg" alt="Ananthagiri Hills" class="thumbnail">
           <div class="caption">
             <h2>Ananthagiri Hills</h2>
           </div>
        </a>
-    </div>
+    </div> -->
  </div>
 
  <footer>
